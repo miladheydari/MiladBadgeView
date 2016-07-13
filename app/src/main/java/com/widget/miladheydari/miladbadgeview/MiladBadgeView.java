@@ -66,12 +66,18 @@ public class MiladBadgeView extends TextView {
 
     public void setBackground(int dipRadius, int badgeColor) {
         int radius = dip2Px(dipRadius);
-        float[] radiusArray = new float[] { radius, radius, radius, radius, radius, radius, radius, radius };
+        float[] radiusArray = new float[]{radius, radius, radius, radius, radius, radius, radius, radius};
 
         RoundRectShape roundRect = new RoundRectShape(radiusArray, null, null);
         ShapeDrawable bgDrawable = new ShapeDrawable(roundRect);
         bgDrawable.getPaint().setColor(badgeColor);
-        setBackground(bgDrawable);
+        int sdk = android.os.Build.VERSION.SDK_INT;
+        if (sdk < android.os.Build.VERSION_CODES.JELLY_BEAN) {
+            setBackgroundDrawable(bgDrawable);
+        } else {
+            setBackground(bgDrawable);
+        }
+
     }
 
     /**
@@ -147,7 +153,7 @@ public class MiladBadgeView extends TextView {
 
     public int[] getBadgeMargin() {
         FrameLayout.LayoutParams params = (LayoutParams) getLayoutParams();
-        return new int[] { params.leftMargin, params.topMargin, params.rightMargin, params.bottomMargin };
+        return new int[]{params.leftMargin, params.topMargin, params.rightMargin, params.bottomMargin};
     }
 
     public void incrementBadgeCount(int increment) {
