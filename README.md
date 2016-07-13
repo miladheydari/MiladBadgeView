@@ -20,7 +20,7 @@ Add the dependency
 
 ```groovy
 	dependencies {
-	        compile 'com.github.miladheydari:MiladBadgeView:1.0.0'
+	        compile 'com.github.miladheydari:MiladBadgeView:1.0.2'
 	}
 ```
 or download https://github.com/miladheydari/MiladBadgeView/blob/master/app/release/MiladBadgeView.jar and copy to libs project folder.
