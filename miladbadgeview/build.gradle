@@ -1,11 +1,13 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group='com.github.miladheydari'
 
 android {
     compileSdkVersion 24
     buildToolsVersion "24.0.0"
 
     defaultConfig {
-        applicationId "com.widget.milad.miladproject"
         minSdkVersion 14
         targetSdkVersion 24
         versionCode 1
@@ -23,5 +25,23 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:24.0.0'
-    compile project(path: ':miladbadgeview')
 }
+task deleteOldJar(type: Delete) {
+    delete 'release/MiladBadgeView.jar'
+}
+
+
+// task to export contents as jar
+task exportJar(type: Copy) {
+    from('build/intermediates/bundles/release/')
+    into('release')
+    include('classes.jar')
+    // name the plugin
+    rename('classes.jar','MiladBadgeView.jar')
+}
+
+exportJar.dependsOn(deleteOldJar, build)
+
+
+
+
