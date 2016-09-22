@@ -1,5 +1,8 @@
 # milad badge view
 badge view for android
+![Demos](https://github.com/miladheydari/MiladBadgeView/blob/master/capture/device-2016-09-22-174932.png "Demos")&nbsp;
+![Demos](https://github.com/miladheydari/MiladBadgeView/blob/master/capture/device-2016-09-22-175029.png "Demos")
+
 ***
 simple and useful
 ***
@@ -20,10 +23,10 @@ Add the dependency
 
 ```groovy
 	dependencies {
-	        compile 'com.github.miladheydari:MiladBadgeView:1.0.2'
+	        compile 'com.github.miladheydari:MiladBadgeView:1.1.0'
 	}
 ```
-or download https://github.com/miladheydari/MiladBadgeView/blob/master/app/release/MiladBadgeView.jar and copy to libs project folder.
+or download https://github.com/miladheydari/MiladBadgeView/blob/master/miladbadgeview/release/MiladBadgeView.jar and copy to libs project folder.
 # usage
 ```Java 
 TextView tv=(TextView)findViewById(R.id.tv);
