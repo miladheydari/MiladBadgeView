@@ -31,7 +31,7 @@ or download https://github.com/miladheydari/MiladBadgeView/blob/master/miladbadg
 ```Java 
 TextView tv=(TextView)findViewById(R.id.tv);
 MiladBadgeView mbv=new MiladBadgeView(getActivity());
-mbv.setTarget(tv);
+mbv.setTargetView(tv);
 mbv.setText("1");
 ```
 
